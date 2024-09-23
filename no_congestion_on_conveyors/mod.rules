@@ -1,0 +1,59 @@
+//
+// Author : FooPhoenix
+//
+// License : MIT License
+// Repository : https://github.com/FooPhoenix/No_Congestion_On_Conveyors
+//
+// Other Contributors :
+//
+//
+// =============================================================================
+
+ID = FooPhoenix.NoCongestion
+Author = "FooPhoenix"
+Name = "No Congestion On Conveyors"
+Version = 1.0.0
+
+// =============================================================================
+
+CompatibleGameVersions = ["0.20.0", "0.21.0", "0.22.0", "0.23.0", "0.24.0", "0.25.0", "0.26.0", "0.27.0"]
+ModifiesMultiplayer    = true
+
+// =============================================================================
+
+Description = "This mod removes the crew congestion speed penalty on conveyors.\nUpdated for the game version '0.27.xx'."
+Logo = "logo.png"
+
+Actions
+[
+    {
+        Action = Overrides
+        
+        OverrideIn = "<./Data/ships/terran/conveyor/conveyor.rules>/Part/CrewCongestedSpeedFactor"
+        
+        CreateIfNotExisting = false
+        IgnoreIfNotExisting = false
+        
+        Overrides
+        {
+            Up    = 2.00    // Original game value : 1.0
+            Left  = 1.00    // Original game value : 0.375
+            Right = 1.00    // Original game value : 0.375
+        }
+    }
+    {
+        Action = Overrides
+        
+        OverrideIn = "<./Data/ships/terran/conveyor/conveyor.rules>/Part/CrewSpeedFactor"
+        
+        CreateIfNotExisting = false
+        IgnoreIfNotExisting = false
+        
+        Overrides
+        {
+            Left  = 1.00    // Original game value : 0.75
+            Right = 1.00    // Original game value : 0.75
+        }
+    }
+]
+
